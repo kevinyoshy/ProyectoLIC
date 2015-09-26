@@ -1,0 +1,194 @@
+<!DOCTYPE! html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" href="css/hidemenu.css" />
+ <script src="js/togglemenu.js"></script> 
+
+	<title>Conversion de monedas</title>
+</head>
+<body>
+	<header>
+<h1>Convertidor de monedas</h1>
+	</header>
+	<ul id="ul1">
+			<li class="lia"><a class="aa" href="index.html">Inicio</a></li>
+			<li class="lia"><a class="aa" href="conversion.html">Conversión</a></li>
+			<li class="lia"><a class="aa" href="#">Países</a></li>
+			
+		</ul>
+		<div id="box" class="hide">
+ <ul id="tab">
+ <li>
+ <img id="arrow" src="img/buscanos.png">
+ </li>
+ </ul>
+ <div id="links">
+ <div id="deco">
+ <div class="bt">
+ <a href="facebook.com">Facebook</a>
+ </div>
+ <div class="bt">
+ <a href="twitter.com">Twitter</a>
+ </div>
+ <div class="bt">
+ <a href="Instagram.com">Instagram</a>
+ </div>
+ <div class="bt">
+ <a href="contact.php">¡LLAMA YA!</a>
+ </div>
+ </div>
+ </div>
+ <input>
+</div> 
+<article>
+<form action="">
+      <select name="" id="tipo1">
+        <option value="0">Seleccione una moneda</option>
+        <option value="dolar">Dolar</option>
+        <option value="colon">Colon Salvadoreño</option>
+        <option value="euro">Euro</option>
+        <option value="coloncosta">Lempira</option>
+        <option value="yen">Yen</option>
+        <option value="peso">Peso</option>
+        <option value="libras">Libras Esterlinas</option>
+      </select>
+      <input type="text" placeholder="0.00" id="cantidad">
+      <select name="" id="tipo2">
+        <option value="0">Seleccione una moneda</option>
+        <option value="colon">Colon Salvadoreño</option>
+        <option value="dolar">Dolar</option>
+        <option value="coloncosta">Lempira</option>
+        <option value="euro">Euro</option>
+        <option value="yen">Yen</option>
+        <option value="peso">Peso</option>
+        <option value="libras">Libras Esterlinas</option>
+      </select>
+      <input type="text" id="resul">
+      <input type="button" onclick="conversion();" value="Convertir">
+    </form>
+
+    <script>   
+        function conversion(){
+          var moneda1 = document.getElementById('tipo1');
+          var tipo1 = (moneda1.options[moneda1.selectedIndex].value);
+
+          var moneda2 = document.getElementById('tipo2');
+          var tipo2 = (moneda2.options[moneda2.selectedIndex].value);
+
+          var cantidad = document.getElementById('cantidad').value;
+          
+          var colon = 8.75;
+          var dolar = 1;
+          var euro = 0.89;
+          var coloncosta = 21.97;
+          var yen = 120.60;
+          var peso = 16.97;
+          var libras= 0.66;
+
+          var conversion=0;
+
+          switch(tipo1){
+            case "dolar":
+              switch(tipo2){
+                case "colon":
+                  conversion = cantidad * colon;
+                  document.getElementById('resul').value = conversion;
+                break;
+                case "euro":
+                  conversion = cantidad * euro;
+                  document.getElementById('resul').value = conversion;
+                break;
+                case "coloncosta":
+                  conversion = cantidad * coloncosta;
+                  document.getElementById('resul').value = conversion;
+                break;
+
+                case "yen":
+                conversion = cantidad * yen;
+                document.getElementById('resul').value = conversion;
+                break;
+                case "peso":
+                conversion = cantidad *  peso;
+                document.getElementById('resul').value = conversion;
+                break;
+                case "libras":
+                conversion = cantidad * libras;
+                document.getElementById('resul').value = conversion;
+                break;
+
+              }
+            break;
+            case "colon":
+              switch(tipo2){
+                case "dolar":
+                  conversion = cantidad * dolar;
+                  document.getElementById('resul').value = conversion;
+                break;
+                case "euro":
+                  conversion = cantidad * euro;
+                  document.getElementById('resul').value = conversion;
+                break;
+                case "coloncosta":
+                  conversion = cantidad * coloncosta;
+                  document.getElementById('resul').value = conversion;
+                break;
+                case "yen":
+                conversion = cantidad * yen;
+                document.getElementById('resul').value = conversion;
+                break;
+                case "peso":
+                conversion = cantidad *  peso;
+                document.getElementById('resul').value = conversion;
+                break;
+                case "libras":
+                conversion = cantidad * libras;
+                document.getElementById('resul').value = conversion;
+                break;
+
+              }
+            break;
+            case "euro":
+              switch(tipo2){
+                case "colon":
+                  conversion = cantidad * colon;
+                  document.getElementById('resul').value = conversion;
+                break;
+                case "dolar":
+                  conversion = cantidad * dolar;
+                  document.getElementById('resul').value = conversion;
+                break;
+                case "coloncosta":
+                  conversion = cantidad * coloncosta;
+                  document.getElementById('resul').value = conversion;
+                break;
+              }
+              break;
+              case "coloncosta":
+              switch(tipo2){
+                case "dolar":
+                  conversion = cantidad * dolar;
+                  document.getElementById('resul').value = conversion;
+                break;
+                case "euro":
+                  conversion = cantidad * euro;
+                  document.getElementById('resul').value = conversion;
+                break;
+                case "colon":
+                  conversion = cantidad * colon;
+                  document.getElementById('resul').value = conversion;
+                break;
+              }
+              break;
+          }
+        }
+
+    </script>
+	</article>
+<footer>
+<p>@derechos de copyright 2015</p>
+</footer>
+</body>
+
+</html>
